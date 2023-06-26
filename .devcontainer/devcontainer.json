@@ -3,6 +3,8 @@
   "features": {
     "ghcr.io/devcontainers-contrib/features/deno:1": {}
   },
+  "appPort": "5173:5173",
+
     // Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
@@ -17,7 +19,9 @@
 				"esbenp.prettier-vscode",
 				"bradlc.vscode-tailwindcss",
 				"Vue.volar",
-				"csstools.postcss"
+				"csstools.postcss",
+				"GitHub.copilot",
+				"eamodio.gitlens"
 			]
 		}
 	}

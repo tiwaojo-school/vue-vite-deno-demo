@@ -3,26 +3,43 @@
   "features": {
     "ghcr.io/devcontainers-contrib/features/deno:1": {}
   },
-  "appPort": "5173:5173",
-
-    // Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Set *default* container specific settings.json values on container create.
-			"settings": {},
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"VisualStudioExptTeam.vscodeintellicode",
-				"VisualStudioExptTeam.intellicode-api-usage-examples",
-				"ms-vscode.vscode-typescript-next",
-				"esbenp.prettier-vscode",
-				"bradlc.vscode-tailwindcss",
-				"Vue.volar",
-				"csstools.postcss",
-				"GitHub.copilot",
-				"eamodio.gitlens"
-			]
-		}
+"forwardPorts": [3000, 8000],
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "deno.enable": true,
+        "deno.inlayHints.enumMemberValues.enabled": true,
+        "deno.inlayHints.variableTypes.enabled": true,
+		"deno.codeLens.references": true,
+		"deno.codeLens.implementations": true,
+		"deno.codeLens.referencesAllFunctions": true,
+		"deno.codeLens.referencesAllImportedSymbols": true,
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "VisualStudioExptTeam.vscodeintellicode",
+        "VisualStudioExptTeam.intellicode-api-usage-examples",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "Vue.volar",
+        "csstools.postcss",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "justjavac.vscode-deno-extensionpack",
+        "hollowtree.vue-snippets"
+      ]
+    }
+},
+"portsAttributes": {
+	"3000": {
+		"label": "frontend"
+	},
+	"8000": {
+		"label": "backend"
 	}
+}
 }

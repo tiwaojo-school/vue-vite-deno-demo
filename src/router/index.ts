@@ -19,7 +19,7 @@ const routes = [
   //   },
   {
     path: "/:dinosaur",
-    component: () => import("../views/Dinosaurs.vue"),
+    component: () => import("../components/Dinosaur.vue"),
     props:true,
     name: "Dinosaur",
   },
